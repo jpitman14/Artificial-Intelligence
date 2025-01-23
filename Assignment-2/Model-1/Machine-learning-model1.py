@@ -33,6 +33,7 @@ rmse = np.sqrt(mse)
 r2 = r2_score(y_test, y_pred)
 mae = mean_absolute_error(y_test, y_pred)
 
+# Prints calculations
 print("Linear Regression Model")
 print(f"Mean Squared Error: {mse}")
 print(f"Root Mean Squared Error: {rmse}")
