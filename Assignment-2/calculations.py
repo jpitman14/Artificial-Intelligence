@@ -34,10 +34,18 @@ for feature in features:
     plt.grid(True)
     plt.show()
 
-    # Bar plot for building type
+# Bar plot for building type
 plt.figure(figsize=(10, 6))
 sns.barplot(data=data, x='Building Type', y='Energy Consumption')
 plt.title('Average Energy Consumption by Building Type', fontsize=16)
 plt.xlabel('Building Type', fontsize=12)
+plt.ylabel('Average Energy Consumption', fontsize=12)
+plt.show()
+
+# Bar plot for day of the week
+plt.figure(figsize=(10, 6))
+sns.barplot(data=data, x='Day of Week', y='Energy Consumption')
+plt.title('Average Energy Consumption by Day of the Week', fontsize=16)
+plt.xlabel('Day of the Week', fontsize=12)
 plt.ylabel('Average Energy Consumption', fontsize=12)
 plt.show()
