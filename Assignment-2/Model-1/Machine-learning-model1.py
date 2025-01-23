@@ -19,3 +19,18 @@ y = data['Energy Consumption']
 
 # Train-test split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Linear Regression Model
+linear_regressor = LinearRegression()
+linear_regressor.fit(X_train, y_train)
+
+# Predictions
+y_pred = linear_regressor.predict(X_test)
+
+# Plotting Actual vs Predicted values
+plt.scatter(y_test, y_pred)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linestyle='--')
+plt.xlabel("Actual Energy Consumption")
+plt.ylabel("Predicted Energy Consumption")
+plt.title("Linear Regression: Actual vs Predicted Energy Consumption")
+plt.show()
