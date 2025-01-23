@@ -27,6 +27,18 @@ linear_regressor.fit(X_train, y_train)
 # Predictions
 y_pred = linear_regressor.predict(X_test)
 
+# Model Evaluation
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+r2 = r2_score(y_test, y_pred)
+mae = mean_absolute_error(y_test, y_pred)
+
+print("Linear Regression Model")
+print(f"Mean Squared Error: {mse}")
+print(f"Root Mean Squared Error: {rmse}")
+print(f"R-squared: {r2}")
+print(f"Mean Absolute Error: {mae}")
+
 # Plotting Actual vs Predicted values
 plt.scatter(y_test, y_pred)
 plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linestyle='--')
