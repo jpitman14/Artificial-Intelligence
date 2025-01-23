@@ -13,7 +13,6 @@ label_encoder = LabelEncoder()
 # List of linear variables to analyze
 features = ['Square Footage', 'Number of Occupants', 'Appliances Used', 'Average Temperature',]
 
-
 # Generate scatter plots with a line of best fit
 for feature in features:
     # Scatter plot
@@ -34,3 +33,11 @@ for feature in features:
     plt.legend()
     plt.grid(True)
     plt.show()
+
+    # Bar plot for building type
+plt.figure(figsize=(10, 6))
+sns.barplot(data=data, x='Building Type', y='Energy Consumption')
+plt.title('Average Energy Consumption by Building Type', fontsize=16)
+plt.xlabel('Building Type', fontsize=12)
+plt.ylabel('Average Energy Consumption', fontsize=12)
+plt.show()
