@@ -10,5 +10,27 @@ data = pd.read_csv("Assignment-2\\Data\\energy_data.csv")
 # Preprocessing
 label_encoder = LabelEncoder()
 
-# List of variables to analyze
+# List of linear variables to analyze
 features = ['Square Footage', 'Number of Occupants', 'Appliances Used', 'Average Temperature',]
+
+
+# Generate scatter plots with a line of best fit
+for feature in features:
+    # Scatter plot
+    plt.figure(figsize=(6, 4))
+    plt.scatter(data[feature], data['Energy Consumption'], alpha=0.5, color='blue', label='Data points')
+    
+    # Line of best fit
+    x = data[feature]
+    y = data['Energy Consumption']
+    slope, intercept = np.polyfit(x, y, 1)  # Linear regression to calculate slope and intercept
+    line = slope * x + intercept
+    plt.plot(x, line, color='red', label='Line of Best Fit', linestyle='--')
+    
+    # Plot formatting
+    plt.xlabel(feature)
+    plt.ylabel("Energy Consumption")
+    plt.title(f"Relationship between {feature} and Energy Consumption")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
